@@ -11,6 +11,7 @@ None
 Role Variables
 --------------
 
+```
 eid_browser_packages:
   - icedtea-plugin
   - default-jre
@@ -20,7 +21,7 @@ eid_packages:
   - eid-mw
 eid_version: 2016.3
 eid_url: http://eid.belgium.be/sites/default/files/downloads/eid-archive_{{ eid_version }}_all.deb
-
+```
 
 Dependencies
 ------------
