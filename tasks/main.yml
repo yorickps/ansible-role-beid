@@ -1,0 +1,26 @@
+---
+# tasks file for be-id
+- name: Download eid repo
+  get_url:
+    url: "{{ eid_url }}"
+    dest: "/tmp/eid-archive_{{ eid_version }}_all.deb"
+
+- name: Install eid repo
+  apt:
+    deb: "/tmp/eid-archive_{{ eid_version }}_all.deb"
+    state: installed
+  notify: clean up temp files    
+
+- name: Run apt-get update
+  apt:
+    update_cache: yes
+
+- name: Install eid packages
+  apt: name={{ item }} state=present
+  with_items:
+    - "{{ eid_packages }}"
+
+- name: Install Java browser plugin
+  apt: name={{ item }} state=present
+  with_items:
+    - "{{ eid_browser_packages }}"
