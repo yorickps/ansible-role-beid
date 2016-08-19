@@ -1,7 +1,16 @@
 beid
 =========
 
-Role to install Belgian eiD software
+[![Build Status](https://travis-ci.org/ymajik/ansible-role-beid.svg?branch=master)](https://travis-ci.org/ymajik/ansible-role-beid)
+
+Role to install Belgian eiD software and middleware on Debian based systems.
+
+It installs the "eid-archive" package, enabling the eID package repositories. Based on the packages enabled in the vars, the role installs the "eid-viewer" and/or "eid-mw" packages.
+
+This role does ***not*** cover the installation of the smart card reader. More info can be found on the
+[eiD FAQ](http://test.eid.belgium.be/faq/faq_nl.htm) from the Belgian governement and the [Debian Smartcards wiki](https://wiki.debian.org/Smartcards).
+
+For Firefox, an [add-on](https://addons.mozilla.org/en-US/firefox/addon/belgium-eid/) is required.
 
 Requirements
 ------------
@@ -10,6 +19,7 @@ None
 
 Role Variables
 --------------
+
 
 ```
 eid_browser_packages:
