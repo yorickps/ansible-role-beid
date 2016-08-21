@@ -1,6 +1,13 @@
 ---
 sudo: required
 
+#safelist
+branches:
+  only:
+  - master
+  - stable
+  - testing
+
 env:
   - distribution: centos
     version: 6
