@@ -1,26 +1,14 @@
 ---
-# tasks file for be-id
-- name: Download eid repo
-  get_url:
-    url: "{{ eid_url }}"
-    dest: "/tmp/eid-archive_{{ eid_version }}_all.deb"
+# Include variables and define needed variables.
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
 
-- name: Install eid repo
-  apt:
-    deb: "/tmp/eid-archive_{{ eid_version }}_all.deb"
-    state: installed
-  notify: clean up temp files    
+# Setup/install tasks.
+- include: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
 
-- name: Run apt-get update
-  apt:
-    update_cache: yes
+#- include: setup-Suse.yml
+#  when: ansible_os_family == 'Suse'
 
-- name: Install eid packages
-  apt: name={{ item }} state=present
-  with_items:
-    - "{{ eid_packages }}"
-
-- name: Install Java browser plugin
-  apt: name={{ item }} state=present
-  with_items:
-    - "{{ eid_browser_packages }}"
+- include: setup-Debian.yml
+  when: ansible_os_family == 'Debian'

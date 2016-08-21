@@ -1,0 +1,22 @@
+# tasks file for be-id
+- name: Download eid repo
+  get_url:
+    url: "{{ eid_url }}"
+    dest: "/tmp/eid-archive-el-{{ eid_version }}.noarch.rpm"
+
+- name: Install eid repo
+  yum:
+    name: "/tmp/eid-archive-el-{{ eid_version }}.noarch.rpm"
+    state: installed
+  notify: clean up temp files
+
+- name: Install eid packages
+  yum: name={{ item }} state=present
+  update_cache: yes
+  with_items:
+    - "{{ eid_packages }}"
+
+- name: Install Java browser plugin
+  yum: name={{ item }} state=present
+  with_items:
+    - "{{ eid_browser_packages }}"
