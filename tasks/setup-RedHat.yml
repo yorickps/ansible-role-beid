@@ -12,7 +12,6 @@
 
 - name: Install eid packages
   yum: name={{ item }} state=present
-  update_cache: yes
   with_items:
     - "{{ eid_packages }}"
 
