@@ -3,7 +3,7 @@ beid
 
 [![Build Status](https://travis-ci.org/ymajik/ansible-role-beid.svg?branch=master)](https://travis-ci.org/ymajik/ansible-role-beid)
 
-Role to install Belgian eiD software and middleware on Debian based systems.
+Role to install [Belgian eiD software and middleware](http://eid.belgium.be/en/using_your_eid/installing_the_eid_software/linux) on Debian based systems.
 
 It installs the "eid-archive" package, enabling the eID package repositories. Based on the packages enabled in the vars, the role installs the "eid-viewer" and/or "eid-mw" packages.
 
