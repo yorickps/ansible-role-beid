@@ -2,13 +2,13 @@
 - name: Download eid repo
   get_url:
     url: "{{ eid_url }}"
-    dest: "/tmp/eid-archive-el-{{ eid_version }}.noarch.rpm"
+    dest: "{{ ansible_env.HOME }}/eid-archive-el-{{ eid_version }}.noarch.rpm"
 
 - name: Install eid repo
   yum:
-    name: "/tmp/eid-archive-el-{{ eid_version }}.noarch.rpm"
+    name: "{{ ansible_env.HOME }}/eid-archive-el-{{ eid_version }}.noarch.rpm"
     state: installed
-  notify: clean up temp files
+  #notify: clean up temp files
 
 - name: Install eid packages
   yum: name={{ item }} state=present

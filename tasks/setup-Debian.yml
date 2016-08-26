@@ -2,11 +2,11 @@
 - name: Download eid repo
   get_url:
     url: "{{ eid_url }}"
-    dest: "/tmp/eid-archive_{{ eid_version }}_all.deb"
+    dest: "{{ ansible_env.HOME }}/eid-archive_{{ eid_version }}_all.deb"
 
 - name: Install eid repo
   apt:
-    deb: "/tmp/eid-archive_{{ eid_version }}_all.deb"
+    deb: "{{ ansible_env.HOME }}/eid-archive_{{ eid_version }}_all.deb"
     state: installed
   notify: clean up temp files
 

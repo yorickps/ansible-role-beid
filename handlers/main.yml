@@ -2,5 +2,5 @@
 # handlers file for be-id
 - name: clean up temp files
   file:
-    path: /tmp/eid-archive_{{ eid_version }}_all.deb
+    path: {{ ansible_env.HOME }}/eid-archive_{{ eid_version }}_all.deb
     state: absent
