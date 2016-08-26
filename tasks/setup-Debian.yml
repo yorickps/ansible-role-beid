@@ -1,14 +1,23 @@
 # tasks file for be-id
+
+- name: Check if eid packages are not installed yet
+  command: dpkg-query -l {{ item }}
+  with_items:
+    - "{{ eid_packages }}"
+  register: packages_check
+
 - name: Download eid repo
   get_url:
     url: "{{ eid_url }}"
     dest: "{{ ansible_env.HOME }}/eid-archive_{{ eid_version }}_all.deb"
+  when: packages_check.stdout.find('no packages found') != -1
 
 - name: Install eid repo
   apt:
     deb: "{{ ansible_env.HOME }}/eid-archive_{{ eid_version }}_all.deb"
     state: installed
   notify: clean up temp files
+  when: packages_check.stdout.find('no packages found') != -1
 
 - name: Run apt-get update
   apt:
