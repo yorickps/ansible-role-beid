@@ -146,7 +146,7 @@ galaxy_info:
     - trusty
   #  - utopic
   #  - vivid
-    - wily
+  #  - wily
     - xenial
   #- name: SLES
   #  versions:
