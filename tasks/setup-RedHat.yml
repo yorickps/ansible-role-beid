@@ -1,22 +1,28 @@
 # tasks file for be-id
+# - name: Check if eid packages are not installed yet
+#   command: rpm -q {{ item }}
+#   with_items:
+#     - "{{ eid_packages }}"
+#   register: packages_check
 - name: Check if eid packages are not installed yet
-  command: rpm -q {{ item }}
-  with_items:
-    - "{{ eid_packages }}"
-  register: packages_check
+  stat:
+    path: /usr/bin/eid-viewer
+  register: eid_installed
 
 - name: Download eid repo
   get_url:
     url: "{{ eid_url }}"
     dest: "{{ ansible_env.HOME }}/eid-archive-el-{{ eid_version }}.noarch.rpm"
-  when: packages_check.stdout.find('is not installed') != -1
+  #when: packages_check.stdout.find('no packages found') != -1
+  when: eid_installed.stat.exists == false
 
 - name: Install eid repo
   yum:
     name: "{{ ansible_env.HOME }}/eid-archive-el-{{ eid_version }}.noarch.rpm"
     state: installed
   #notify: clean up temp files
-  when: packages_check.stdout.find('is not installed') != -1
+  #when: packages_check.stdout.find('no packages found') != -1
+  when: eid_installed.stat.exists == false
 
 - name: Install eid packages
   yum: name={{ item }} state=present
