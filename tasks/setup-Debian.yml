@@ -16,6 +16,7 @@
     url: "{{ eid_url }}"
     dest: "{{ ansible_env.HOME }}/eid-archive_{{ eid_version }}_all.deb"
   #when: packages_check.stdout.find('no packages found') != -1
+  when: eid_installed.stat.exists == false
 
 - name: Install eid repo
   apt:
