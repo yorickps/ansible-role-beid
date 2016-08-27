@@ -2,6 +2,7 @@ beid
 =========
 
 [![Build Status](https://travis-ci.org/ymajik/ansible-role-beid.svg?branch=master)](https://travis-ci.org/ymajik/ansible-role-beid)
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-beid-blue.svg?style=flat)](https://galaxy.ansible.com/ymajik/beid)
 
 Role to install [Belgian eiD software and middleware](http://eid.belgium.be/en/using_your_eid/installing_the_eid_software/linux) on Debian based systems.
 
