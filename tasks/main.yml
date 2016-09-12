@@ -1,5 +1,10 @@
 ---
 # Include variables and define needed variables.
+- name: Checking Ansible version...
+  fail:
+    msg: "\n\nðŸ˜±  You need at least version 2.0 of Ansible to continue.\n"
+    when: not ansible_version.major == 2
+
 - name: Include OS-specific variables.
   include_vars: "{{ ansible_os_family }}.yml"
 
