@@ -30,7 +30,7 @@ eid_packages:
   - eid-archive
   - eid-viewer
   - eid-mw
-eid_version: 2016.3
+eid_version: 2016.4
 eid_url: http://eid.belgium.be/sites/default/files/downloads/eid-archive_{{ eid_version }}_all.deb
 ```
 
@@ -46,7 +46,7 @@ Example Playbook
       roles:
          - { role: ymajik.ansible-role-beid }
       vars:
-        eid_version: 2016.3
+        eid_version: 2016.4
 
 License
 -------
