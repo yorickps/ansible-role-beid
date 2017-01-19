@@ -1,10 +1,4 @@
 ---
 # defaults file for be-id
-eid_browser_packages:
-  - icedtea-plugin
-  - default-jre
-eid_packages:
-  - eid-archive
-  - eid-viewer
-  - eid-mw
+
 eid_version: "{{ eid_latest_version }}"
