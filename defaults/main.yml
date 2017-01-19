@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 # defaults file for be-id
 eid_browser_packages:
   - icedtea-plugin
@@ -9,3 +10,7 @@ eid_packages:
   - eid-mw
 eid_version: 2016.4
 eid_url: http://eid.belgium.be/sites/default/files/downloads/eid-archive_{{ eid_version }}_all.deb
+=======
+# defaults file for beid
+eid_version: "{{ eid_latest_version }}"
+>>>>>>> testing

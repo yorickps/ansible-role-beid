@@ -1,0 +1,27 @@
+# tasks file for beid
+- name: Check if eid packages are not installed yet
+  stat:
+    path: /usr/bin/eid-viewer
+  register: eid_installed
+
+# - name: Download eid repo
+#   get_url:
+#     url: "{{ eid_url }}"
+#     dest: "{{ ansible_env.HOME }}/eid-archive-el-{{ eid_version }}.noarch.rpm"
+#   when: eid_installed.stat.exists == false
+
+- name: Install eid repo
+  package:
+    name: "{{ eid_url }}"
+    state: installed
+  when: eid_installed.stat.exists == false
+  # notify:
+  #   - clean up temp files
+
+- name: Install eid packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ eid_packages }}"
+  when: eid_installed.stat.exists == false
