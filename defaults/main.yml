@@ -1,4 +1,3 @@
 ---
 # defaults file for be-id
-
 eid_version: "{{ eid_latest_version }}"
