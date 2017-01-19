@@ -6,3 +6,4 @@ eid_packages:
   - eid-archive-fedora
   - eid-viewer
   - eid-mw
+eid_browser_packages: []
