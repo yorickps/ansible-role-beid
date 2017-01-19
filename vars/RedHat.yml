@@ -3,3 +3,7 @@
 eid_latest_version: 2016-2
 #eid_url: http://eid.belgium.be/sites/default/files/downloads/eid-archive-el-{{ eid_version }}.noarch.rpm
 eid_url: http://files.eid.belgium.be/rpm/el/{{ ansible_distribution_major_version }}/RPMS/noarch/eid-archive-el-{{ eid_version }}.noarch.rpm
+eid_packages:
+  - eid-archive-el
+  - eid-viewer
+  - eid-mw
