@@ -13,16 +13,15 @@
   get_url:
     url: "{{ eid_url }}"
     dest: "{{ ansible_env.HOME }}/eid-archive-el-{{ eid_version }}.noarch.rpm"
-  #when: packages_check.stdout.find('no packages found') != -1
   when: eid_installed.stat.exists == false
 
 - name: Install eid repo
   yum:
     name: "{{ ansible_env.HOME }}/eid-archive-el-{{ eid_version }}.noarch.rpm"
     state: installed
-  #notify: clean up temp files
-  #when: packages_check.stdout.find('no packages found') != -1
   when: eid_installed.stat.exists == false
+  notify:
+    - clean up temp files
 
 - name: Install eid packages
   yum:
@@ -30,3 +29,4 @@
     state: present
   with_items:
     - "{{ eid_packages }}"
+  when: eid_installed.stat.exists == false
