@@ -1,12 +1,17 @@
 ---
 # Include variables and define needed variables.
 - name: Include OS-specific variables.
-  include_vars: "{{ ansible_os_family }}.yml"
+  include_vars:
+    - "{{ ansible_os_family }}.yml"
+    - "{{ ansible_distribution }}.yml"
 
 # Setup/install tasks.
 - include: setup-RedHat.yml
-  when: ansible_os_family == 'RedHat'
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
+- include: setup-Fedora.yml
+  when: ansible_distribution == 'Fedora'
+  
 #- include: setup-Suse.yml
 #  when: ansible_os_family == 'Suse'
 

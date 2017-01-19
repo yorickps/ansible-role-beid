@@ -1,4 +1,4 @@
-# tasks file for be-id
+# tasks file for beid
 
 - name: Check if eid packages are not installed yet
   stat:
