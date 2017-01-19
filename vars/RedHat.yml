@@ -7,4 +7,4 @@ eid_packages:
   - eid-archive-el
   - eid-viewer
   - eid-mw
-  eid_browser_packages: []
+eid_browser_packages: []
