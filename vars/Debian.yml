@@ -2,3 +2,10 @@
 # vars file for be-id
 eid_latest_version: 2016.4
 eid_url: http://eid.belgium.be/sites/default/files/downloads/eid-archive_{{ eid_version }}_all.deb
+eid_packages:
+  - eid-archive
+  - eid-viewer
+  - eid-mw
+eid_browser_packages:
+  - icedtea-plugin
+  - default-jre
