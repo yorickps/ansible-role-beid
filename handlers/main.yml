@@ -1,9 +1,9 @@
 ---
 # handlers file for beid
-- name: clean up temp files
-  file:
-    path: "{{ ansible_env.HOME }}/eid-archive_{{ eid_version }}_all.deb"
-    state: absent
+# - name: clean up temp files
+#   file:
+#     path: "{{ ansible_env.HOME }}/eid-archive_{{ eid_version }}_all.deb"
+#     state: absent
 
 - name: run apt-get update
   apt:
