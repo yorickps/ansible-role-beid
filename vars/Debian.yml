@@ -1,7 +1,7 @@
 ---
 # vars file for beid
-eid_latest_version: 2016.4
-eid_url: http://eid.belgium.be/sites/default/files/downloads/eid-archive_{{ eid_version }}_all.deb
+eid_latest_version: 2017.2
+eid_url: https://eid.belgium.be/sites/default/files/eid-archive_{{ eid_version }}_all.deb
 eid_packages:
   - eid-archive
   - eid-viewer
@@ -9,3 +9,4 @@ eid_packages:
 eid_browser_packages:
   - icedtea-plugin
   - default-jre
+eid_firefox_package: beid-mozilla-extension
