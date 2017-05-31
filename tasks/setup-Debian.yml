@@ -6,7 +6,7 @@
   register: eid_installed
 
 - name: Download eid repo
-  get_url:
+  get_url: 
     url: "{{ eid_url }}"
     dest: "{{ ansible_env.HOME }}/eid-archive_{{ eid_version }}_all.deb"
   when: eid_installed.stat.exists == false
@@ -40,3 +40,13 @@
   with_items:
     - "{{ eid_browser_packages }}"
   when: eid_install | succeeded
+
+#- name: Check if Firefox is installed
+#  command: dpkg-query -W 'firefox'
+#  register: eid_firefox
+#
+#- name: Install Firefox extension
+#  apt:
+#    name: "{{ eid_firefox_extension }}"
+#    state: present
+#  when: eid_firefox_extension and eid_firefox|failed 
