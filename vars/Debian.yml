@@ -1,6 +1,6 @@
 ---
 # vars file for beid
-eid_latest_version: 2017.2
+eid_latest_version: 2017.4
 eid_url: https://eid.belgium.be/sites/default/files/software/eid-archive_{{ eid_version }}_all.deb
 eid_packages:
   - eid-archive
