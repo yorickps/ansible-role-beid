@@ -79,8 +79,7 @@ galaxy_info:
     #  - lenny
     #  - sid
     #  - squeeze
-    #  - stretch
-      - wheezy
+      - stretch
 
   galaxy_tags:
     - eid
