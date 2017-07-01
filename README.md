@@ -1,4 +1,4 @@
-beid
+eid
 =========
 
 [![Build Status](https://travis-ci.org/ymajik/ansible-role-beid.svg?branch=master)](https://travis-ci.org/ymajik/ansible-role-beid)
@@ -36,7 +36,7 @@ Example Playbook
 
     - hosts: localhost
       roles:
-         - { role: ymajik.ansible-role-beid }
+         - { role: ymajik.beid }
 
 
 License
