@@ -1,4 +1,4 @@
-eid
+ansible-role-beid
 =========
 
 [![Build Status](https://travis-ci.org/ymajik/ansible-role-beid.svg?branch=master)](https://travis-ci.org/ymajik/ansible-role-beid)
