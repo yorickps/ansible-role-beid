@@ -2,11 +2,11 @@ FROM debian:jessie
 RUN apt-get update -y
 
 # Install Ansible
-RUN apt-get install --no-install-recommends -y -q build-essential ca-certificates python-pip python-dev python-yaml libffi-dev libssl-dev libxml2-dev libxslt1-dev zlib1g-dev git apt-utils ansible
-#RUN apt-get -y --purge remove python-cffi
-#RUN pip install --upgrade cffi
-#RUN pip install --upgrade pyyaml jinja2 pycrypto
-#RUN pip install ansible
+RUN apt-get install --no-install-recommends -y -q build-essential ca-certificates python-pip python-dev python-yaml libffi-dev libssl-dev libxml2-dev libxslt1-dev zlib1g-dev git apt-utils
+RUN apt-get -y --purge remove python-cffi
+RUN pip install --upgrade cffi
+RUN pip install --upgrade pyyaml jinja2 pycrypto
+RUN pip install ansible
 
 # Install Ansible inventory file
 RUN mkdir -pv /etc/ansible
