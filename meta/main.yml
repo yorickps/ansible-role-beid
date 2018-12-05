@@ -2,6 +2,7 @@ galaxy_info:
   author: ymajik
   description: role to install Belgian eiD software
   company:
+  role_name: beid
 
   license: BSD
 
