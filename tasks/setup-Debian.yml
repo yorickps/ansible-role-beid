@@ -24,10 +24,9 @@
 
 - name: Install eid packages
   apt:
-    name: "{{ item }}"
+    name: "{{ eid_packages }}"
     state: present
-  with_items:
-    - "{{ eid_packages }}"
+
   when: eid_installed.stat.exists == false
   register: eid_install
   notify:
@@ -35,10 +34,8 @@
 
 - name: Install Java browser plugin
   apt:
-    name: "{{ item }}"
+    name:"{{ eid_browser_packages }}"
     state: present
-  with_items:
-    - "{{ eid_browser_packages }}"
   when: eid_install | succeeded
 
 #- name: Check if Firefox is installed
