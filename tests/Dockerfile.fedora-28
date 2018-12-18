@@ -1,4 +1,4 @@
-FROM fedora:27
+FROM fedora:29
 ENV container=docker
 
 # ensure we have the latest packages
