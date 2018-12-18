@@ -34,7 +34,7 @@
 
 - name: Install Java browser plugin
   apt:
-    name:"{{ eid_browser_packages }}"
+    name: "{{ eid_browser_packages }}"
     state: present
   when: eid_install | succeeded
 
