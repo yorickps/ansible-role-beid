@@ -15,9 +15,9 @@
   apt:
     deb: "{{ ansible_env.HOME }}/eid-archive_{{ eid_version }}_all.deb"
     state: installed
-  notify: clean up temp files
   when: eid_installed.stat.exists == false
   notify:
+    - clean up temp files
     - run apt-get update
 
 - meta: flush_handlers
