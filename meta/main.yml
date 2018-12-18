@@ -1,5 +1,5 @@
 galaxy_info:
-  author: ymajik
+  author: yorickps
   description: role to install Belgian eiD software
   company: yorickps
   role_name: beid

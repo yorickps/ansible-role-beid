@@ -1,8 +1,8 @@
 ansible-role-beid
 =========
 
-[![Build Status](https://travis-ci.org/ymajik/ansible-role-beid.svg?branch=master)](https://travis-ci.org/ymajik/ansible-role-beid)
-[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-beid-blue.svg?style=flat)](https://galaxy.ansible.com/ymajik/beid)
+[![Build Status](https://travis-ci.org/yorickps/ansible-role-beid.svg?branch=master)](https://travis-ci.org/yorickps/ansible-role-beid)
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-beid-blue.svg?style=flat)](https://galaxy.ansible.com/yorickps/beid)
 
 Role to install [Belgian eiD software and middleware](https://eid.belgium.be/en/how-install-eid-software) on Debian and RedHat based systems.
 
@@ -36,7 +36,7 @@ Example Playbook
 
     - hosts: localhost
       roles:
-         - { role: ymajik.beid }
+         - { role: yorickps.beid }
 
 
 License
@@ -47,4 +47,4 @@ BSD
 Author Information
 ------------------
 
-ymajik
+yorickps
